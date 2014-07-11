@@ -1,28 +1,64 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a simple blog application built with Ruby on Rails. Below I have provided setting up a development environment in Linux as this is the environment I chose to create this project within.
 
-Things you may want to cover:
+=== HOW TO SETUP DEVELOPMENT ENVIRONMENT (Linux)
 
-* Ruby version
+===== Install Dependencies
 
-* System dependencies
+Install build essentials by opening up a terminal window and typing the following command:
 
-* Configuration
+       sudo apt-get install build-essential
 
-* Database creation
+Next, install curl. In the terminal window type:
 
-* Database initialization
+      sudo apt-get install curl
 
-* How to run the test suite
+Then, install Git. In the terminal window type:
 
-* Services (job queues, cache servers, search engines, etc.)
+        sudo apt-get install git-core
 
-* Deployment instructions
+===== Installing RVM
 
-* ...
+RVM stands for Ruby Version Manager and allows you to install multiple versions of Ruby and switch between them easily. Even if you are only going to use one version, it's probably the simplest way to install Ruby.
 
+To install RMV, in your terminal window run the command:
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+        curl -L https://get.rvm.io | bash -s stable --ruby
+
+In the terminal window, type the following in order to make RVM known in your bash sessions:
+
+        echo '[[ -s "$HOME/.rvm/scripts/rvm" ]] && . "$HOME/.rvm/scripts/rvm"' >> ~/.bashrc
+
+Finally, restart your bash session by closing and then reopening your terminal window.
+
+Using RVM
+
+You can get a list of Ruby versions by running the following command in your terminal window:
+
+        rvm list known
+
+The version of Ruby we will use is 2.1.0 and you can install it by using the following command in your terminal window:
+
+        rvm install ruby-2.1.0
+
+Set this version as the default using the following command in your terminal window:
+
+        rvm use 2.1.0
+
+You can then make sure Ruby is installed by running the following command in your terminal window:
+
+        ruby -v
+
+===== Installing Rails
+
+The latest version of Rails will be installed by issuing the following command.  From your terminal window type:
+
+        gem install rails
+
+You can verify that it was installed correctly by running the following command in your terminal window:
+
+        rails -v
+
+(This will check the current installed version of Rails, which should be 4.0 or later)
+
